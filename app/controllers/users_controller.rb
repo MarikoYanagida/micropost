@@ -38,10 +38,19 @@ def followers
   counts(@user)
 end
 
+def favoritings
+  @user = User.find(params[:id])
+  @favoritings = @user.favoritings.page(params[:page])
+  counts(@user)
+end
 
 private
 
 def user_params
   params.require(:user).permit(:name, :email, :password, :password_confirmation)
 end
+
+def micropost_params
+    params.require(:micropost).permit(:content, :email)
+end  
 end

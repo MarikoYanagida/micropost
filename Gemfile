@@ -57,3 +57,6 @@ group :production do
 end
 
 gem 'kaminari'
+gem 'better_errors'
+gem 'byebug'
+gem 'pry-byebug'
